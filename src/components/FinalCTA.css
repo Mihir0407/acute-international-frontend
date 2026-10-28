@@ -1,0 +1,141 @@
+.final-cta-section {
+  padding: 100px 0;
+  background: var(--color-white);
+}
+
+.final-cta {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 440px;
+  padding: 70px 40px;
+
+  overflow: hidden;
+
+  background: var(--color-primary-light);
+
+  border: 1px solid rgba(57, 114, 91, 0.12);
+  border-radius: var(--radius-lg);
+}
+
+.final-cta-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 720px;
+
+  text-align: center;
+}
+
+.final-cta-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 20px;
+
+  border-radius: 16px;
+
+  background: var(--color-white);
+  color: var(--color-primary);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.final-cta-content .section-label {
+  margin-bottom: 14px;
+}
+
+.final-cta-content h2 {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: var(--color-text);
+
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+.final-cta-content p {
+  max-width: 600px;
+
+  margin: 20px auto 28px;
+
+  color: var(--color-text-light);
+
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.final-cta-button {
+  margin-top: 5px;
+}
+
+.final-cta-note {
+  display: block;
+
+  margin-top: 14px;
+
+  color: var(--color-text-light);
+
+  font-size: 12px;
+}
+
+.final-cta-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.final-cta-decoration-one {
+  width: 300px;
+  height: 300px;
+
+  top: -170px;
+  right: -70px;
+
+  border: 1px solid rgba(57, 114, 91, 0.12);
+}
+
+.final-cta-decoration-two {
+  width: 220px;
+  height: 220px;
+
+  bottom: -130px;
+  left: -70px;
+
+  border: 1px solid rgba(57, 114, 91, 0.1);
+}
+
+@media (max-width: 600px) {
+  .final-cta-section {
+    padding: 70px 0;
+  }
+
+  .final-cta {
+    min-height: auto;
+    padding: 55px 22px;
+  }
+
+  .final-cta-content h2 {
+    font-size: 32px;
+  }
+
+  .final-cta-content p {
+    font-size: 15px;
+  }
+
+  .final-cta-button {
+    width: 100%;
+  }
+}

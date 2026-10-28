@@ -1,0 +1,260 @@
+.conditions-section {
+  position: relative;
+  padding: 110px 0;
+  background: var(--color-white);
+  overflow: hidden;
+}
+
+/* HEADER */
+
+.conditions-header {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.conditions-header .section-title {
+  margin-inline: auto;
+}
+
+.conditions-header .section-description {
+  margin-inline: auto;
+}
+
+/* GRID */
+
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* CARD */
+
+.condition-card {
+  position: relative;
+
+  min-height: 245px;
+
+  padding: 26px 24px 30px;
+
+  background: var(--color-secondary);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+
+  opacity: 0;
+
+  animation: conditionReveal 0.65s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    var(--condition-delay) forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.condition-card:hover {
+  transform: translateY(-7px);
+
+  background: var(--color-white);
+
+  border-color: rgba(57, 114, 91, 0.25);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* ICON */
+
+.condition-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 15px;
+
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.condition-card:hover .condition-icon {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+/* TEXT */
+
+.condition-card h3 {
+  margin-bottom: 9px;
+
+  color: var(--color-text);
+
+  font-size: 18px;
+  line-height: 1.3;
+
+  letter-spacing: -0.02em;
+}
+
+.condition-card p {
+  color: var(--color-text-light);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ARROW */
+
+.condition-arrow {
+  position: absolute;
+
+  right: 23px;
+  bottom: 22px;
+
+  color: var(--color-primary);
+
+  font-size: 20px;
+  font-weight: 500;
+
+  opacity: 0.6;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.condition-card:hover .condition-arrow {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+/* BOTTOM CTA */
+
+.conditions-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+
+  margin-top: 28px;
+  padding: 26px 30px;
+
+  background: var(--color-primary-light);
+
+  border: 1px solid rgba(57, 114, 91, 0.12);
+  border-radius: var(--radius-lg);
+
+  animation: conditionsBottomReveal 0.8s 0.5s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.conditions-bottom strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--color-text);
+
+  font-size: 16px;
+}
+
+.conditions-bottom p {
+  color: var(--color-text-light);
+
+  font-size: 14px;
+}
+
+/* ANIMATIONS */
+
+@keyframes conditionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes conditionsBottomReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+  .conditions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .conditions-section {
+    padding: 75px 0;
+  }
+
+  .conditions-header {
+    margin-bottom: 40px;
+  }
+
+  .conditions-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .condition-card {
+    min-height: 220px;
+    padding: 24px;
+  }
+
+  .conditions-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 22px;
+  }
+
+  .conditions-bottom .btn {
+    width: 100%;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .condition-card,
+  .conditions-bottom {
+    animation: none;
+    opacity: 1;
+  }
+
+  .condition-card,
+  .condition-icon,
+  .condition-arrow {
+    transition: none;
+  }
+}

@@ -1,0 +1,359 @@
+.how-it-works-section {
+  position: relative;
+  padding: 110px 0;
+
+  background: var(--color-secondary);
+
+  overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.how-it-works-header {
+  max-width: 760px;
+
+  margin: 0 auto 60px;
+
+  text-align: center;
+}
+
+.how-it-works-header .section-title {
+  margin-inline: auto;
+}
+
+.how-it-works-header .section-description {
+  margin-inline: auto;
+}
+
+/* =========================
+   STEPS
+========================= */
+
+.how-it-works-steps {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+/* =========================
+   STEP CARD
+========================= */
+
+.how-step {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 28px 25px;
+
+  background: var(--color-white);
+
+  border: 1px solid var(--color-border);
+
+  border-radius: var(--radius-lg);
+
+  opacity: 0;
+
+  animation: howStepReveal 0.7s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    var(--step-delay) forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.how-step:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(57, 114, 91, 0.25);
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================
+   TOP
+========================= */
+
+.how-step-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+/* NUMBER */
+
+.how-step-number {
+  color: var(--color-primary);
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+/* ICON */
+
+.how-step-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: var(--color-primary-light);
+
+  color: var(--color-primary);
+
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.how-step:hover .how-step-icon {
+  transform: scale(1.06);
+
+  background: var(--color-primary);
+
+  color: var(--color-white);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.how-step h3 {
+  margin-bottom: 10px;
+
+  color: var(--color-text);
+
+  font-size: 19px;
+
+  line-height: 1.35;
+
+  letter-spacing: -0.02em;
+}
+
+.how-step p {
+  color: var(--color-text-light);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+/* =========================
+   ARROW
+========================= */
+
+.how-step-arrow {
+  position: absolute;
+
+  top: 50%;
+
+  right: -32px;
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--color-primary);
+
+  color: var(--color-white);
+
+  transform: translateY(-50%);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================
+   BOTTOM NOTE
+========================= */
+
+.how-it-works-note {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  max-width: 700px;
+
+  margin: 30px auto 0;
+
+  padding: 22px 25px;
+
+  background: var(--color-primary-light);
+
+  border: 1px solid rgba(57, 114, 91, 0.12);
+
+  border-radius: var(--radius-lg);
+
+  animation: howNoteReveal 0.8s 0.55s
+    cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.how-note-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-white);
+
+  color: var(--color-primary);
+}
+
+.how-it-works-note strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+}
+
+.how-it-works-note p {
+  color: var(--color-text-light);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes howStepReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes howNoteReveal {
+  from {
+    opacity: 0;
+
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1050px) {
+  .how-it-works-steps {
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+  }
+
+  .how-step-arrow {
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .how-it-works-section {
+    padding: 75px 0;
+  }
+
+  .how-it-works-header {
+    margin-bottom: 40px;
+  }
+
+  .how-it-works-steps {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .how-step {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+  .how-step-top {
+    margin-bottom: 22px;
+  }
+
+  .how-step h3 {
+    font-size: 18px;
+  }
+
+  .how-it-works-note {
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .how-step,
+  .how-it-works-note {
+    animation: none;
+
+    opacity: 1;
+  }
+
+  .how-step,
+  .how-step-icon {
+    transition: none;
+  }
+}

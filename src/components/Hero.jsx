@@ -22,19 +22,10 @@ function Hero() {
       </div>
 
       <div className="container hero-container">
+        {/* LEFT CONTENT */}
         <div className="hero-content">
-          <div className="hero-eyebrow">
-            <span className="hero-eyebrow-icon">
-              <Globe2 size={15} />
-            </span>
-
-            <span>
-              Online Consultation for International Patients
-            </span>
-          </div>
-
           <h1 className="hero-title">
-            Expert Care From India,
+            Expert Homeopathic Consultation from India,
             <span> Accessible Worldwide.</span>
           </h1>
 
@@ -76,6 +67,7 @@ function Hero() {
           </div>
         </div>
 
+        {/* RIGHT VISUAL */}
         <div className="hero-visual">
           <div className="hero-image-glow" />
 

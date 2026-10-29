@@ -5,7 +5,7 @@ import {
   Stethoscope,
 } from 'lucide-react'
 
-import docImage from '../assets/docimage.png'
+import aboutDoc from '../assets/aboutdoc.png'
 import './About.css'
 
 function About() {
@@ -38,7 +38,7 @@ function About() {
 
           <div className="about-image-wrapper">
             <img
-              src={docImage}
+              src={aboutDoc}
               alt="Dr. Shital Shah"
               className="about-doctor-image"
             />
